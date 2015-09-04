@@ -22,3 +22,9 @@ questions.push(q2);
 
 var q3 = new Question('What is the capital of Rwanda?',['Kigali','Austin','Kampala'],0);
 questions.push(q3);
+
+var q4 = new Question('What is the capital of Argentina?',['Freetown','Santiago','Buenos Aires'],2);
+questions.push(q4);
+
+var q5 = new Question('What is the capital of South Korea?',['Beijing','Seoul','Pyongyang'],1);
+questions.push(q5);

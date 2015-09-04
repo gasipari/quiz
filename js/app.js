@@ -29,8 +29,8 @@ function loadQuestion() {
 
 // start quiz
 $('#start-button').click(function(){
-	$('.intro-section').hide();
-	$('.main-section').show();
+	$('#intro-section').hide();
+	$('#main-section').show();
 	loadQuestion();
 })
 
@@ -38,7 +38,7 @@ $('#start-button').click(function(){
 $('#submit-button').click(function(){
 	// increment indices
 	idx = idx + 1;
-	progressIdx = progressIdx + 10;
+	progressIdx = progressIdx + 20;
 	var currentAnswer = $('input[name=question-rdbtn]:checked').val();
 	if (currentQuestion.checkAnswer(currentAnswer)) {
 		// update icon color
@@ -52,8 +52,12 @@ $('#submit-button').click(function(){
 		// update radial progress
 		rp1.value(progressIdx).render();
 
-		// update current question
-		currentQuestion = questions[idx];
-		loadQuestion();
+		if (idx < 5) {
+			// update current question
+			currentQuestion = questions[idx];
+			loadQuestion();
+		}else {
+
+		}
 	})
 })

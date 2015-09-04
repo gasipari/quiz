@@ -83,26 +83,6 @@ div, section {
 	font-size: 1.5em;
 }
 
-/* menu section */
-.menu-section div,
-.menu-section-store div{
-	padding-bottom: 1em;
-}
-
-#shopping-item,
-#store-item {
-	width: 30%;
-}
-
-#shopping-item-qty,
-#shopping-store {
-	margin-left: 1em;
-}
-
-#shopping-item-qty {
-	max-width: 3em;
-}
-
 /* main section */
 .item-done {
 	background-color: lightgreen;
@@ -112,11 +92,6 @@ div, section {
 
 }
 
-/* store sections  */
-.menu-section-store,
-.main-section-store {
-	display: none;
-}
 
  /* Buttons */
  .introduction-button {
@@ -131,6 +106,19 @@ div, section {
   font-size: 1.125rem;
   display: block;
   margin: 1.25rem auto;
+}
+
+
+/* init setting */
+ 
+ #main-section,
+ #end-section,
+ #end-start-button {
+ 	display: none;
+ }
+
+#result-list {
+	height: 22px;
 }
 
 
@@ -188,11 +176,6 @@ div, section {
 	color: red;
 }
 
-/* init setting */
- 
- .main-section {
- 	display: none;
- }
 /* Generic Styling for table (Desktops/Laptops) */
 table { 
 	width: 100%; 

@@ -34,6 +34,21 @@ $('#start-button').click(function(){
 	loadQuestion();
 })
 
+$('#retake-button').click(function(){
+	$('#intro-section').show();
+	$('#end-section').hide();
+
+	// reset variable
+	idx = 0;
+	progressIdx = 0;
+	currentQuestion = questions[idx];
+	rp1.value(progressIdx).render();
+
+	// cleanup html
+	$('.result-list').html('');
+	$('#div2').html('');
+})
+
 // check answer
 $('#submit-button').click(function(){
 	// increment indices
@@ -43,21 +58,28 @@ $('#submit-button').click(function(){
 	if (currentQuestion.checkAnswer(currentAnswer)) {
 		// update icon color
 		var trueList = $('<li><i class="fa fa-thumbs-o-up"></i></li>');
-		$('#result-list').append(trueList);
+		$('.result-list').append(trueList);
 	}else {
 		var falseList = $('<li><i class="fa fa-thumbs-o-down"></i></li>');
-		$('#result-list').append(falseList);
+		$('.result-list').append(falseList);
 	}
-
 		// update radial progress
 		rp1.value(progressIdx).render();
+		console.log(idx,(idx < 5));
 
 		if (idx < 5) {
 			// update current question
 			currentQuestion = questions[idx];
 			loadQuestion();
 		}else {
-
+			setTimeout(function(){
+				$('#main-section').hide();
+				$('#end-section').show();
+				var correctAns = $('#end-section .result-list i.fa-thumbs-o-up').length;
+				var totalAns = $('#end-section .result-list i.fa').length;
+				$('#end-result').text('Your score is '+Math.round(correctAns/totalAns* 100)+'%');
+				$('#div2').append($('#div1').clone());
+			},1000);
 		}
 	})
 })

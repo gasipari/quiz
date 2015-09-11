@@ -117,7 +117,7 @@ div, section {
  	display: none;
  }
 
-#result-list {
+.result-list {
 	height: 22px;
 }
 
